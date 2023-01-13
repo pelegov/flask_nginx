@@ -2,12 +2,6 @@ from flask import Flask, jsonify
 import os
 import signal
 import docker
-
-# client = docker.from_env()
-# containers = client.containers.list(all=True)
-
-# for x in containers:
-#     print(x)
     
 
 app = Flask(__name__)
