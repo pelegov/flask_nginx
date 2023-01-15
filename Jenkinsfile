@@ -27,10 +27,12 @@ pipeline {
             }
         }
     post {
+        stages {
         stage('post step')
             always {
                 sh "docker rmi $registry:$BUILD_NUMBER"
             }
         }    
     }
+}
 }
