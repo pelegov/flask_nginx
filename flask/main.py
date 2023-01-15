@@ -12,7 +12,7 @@ def index():
 
 @app.route('/list')
 def list():
-    list = []
+    print("test")
     client = docker.from_env()
     containers = client.containers.list(all=True)
     return jsonify([d.name for d in containers])
