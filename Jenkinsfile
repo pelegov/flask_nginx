@@ -14,14 +14,15 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/pelegov/flask_nginx.git'
             }
         }
-        stage('clone repo')
+        stage('clone repo') {}
             steps {
                 script{
                     sh 'git clone https://github.com/pelegov/flask_nginx.git'
                     sh 'cd flask'
                     sh 'pwd'
                 }
-            } 
+            }
+        }     
         stage('run build') {
             steps {
                 script {                    
