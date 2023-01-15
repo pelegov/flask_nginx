@@ -13,20 +13,12 @@ pipeline {
                 }
                 git branch: 'main', url: 'https://github.com/pelegov/flask_nginx.git'
             }
-        }
-        stage('change dir') {
-            steps {
-                script{
-                    dir('flask'){
-                        sh "pwd"
-                    }
-                    sh 'pwd'
-                }
-            }
-        }     
+        }   
         stage('run build') {
             steps {
-                script {                    
+                dir('flask'){
+                script {
+                     sh 'pwd'                    
                      dockerImage = docker.build registry + ":$BUILD_NUMBER"
                      docker.withRegistry('', registryCredential) {
                      dockerImage.push()
@@ -37,6 +29,7 @@ pipeline {
             }
         }
     }
+}
 }
 
     // post {
