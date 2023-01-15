@@ -12,6 +12,7 @@ pipeline {
                     properties([pipelineTriggers([pollSCM('H/30 * * * *')])])
                 }
                 git branch: 'main', url: 'https://github.com/pelegov/flask_nginx.git'
+                dir('flask')
             }
         }
         stage('run build') {
