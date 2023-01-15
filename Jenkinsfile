@@ -12,11 +12,11 @@ pipeline {
                     properties([pipelineTriggers([pollSCM('H/30 * * * *')])])
                 }
                 git branch: 'main', url: 'https://github.com/pelegov/flask_nginx.git'
-                dir('flask')
             }
         }
         stage('run build') {
             steps {
+            dir('flask')
                 script {
                      dockerImage = docker.build registry + ":$BUILD_NUMBER"
                      docker.withRegistry('', registryCredential) {
