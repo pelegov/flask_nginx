@@ -17,7 +17,9 @@ pipeline {
         stage('change dir') {
             steps {
                 script{
-                    dir('flask')
+                    dir('flask'){
+                        sh "pwd"
+                    }
                     sh 'pwd'
                 }
             }
