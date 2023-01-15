@@ -14,7 +14,7 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/pelegov/flask_nginx.git'
             }
         }
-        stage('clone repo') {}
+        stage('clone repo') {
             steps {
                 script{
                     sh 'git clone https://github.com/pelegov/flask_nginx.git'
@@ -36,6 +36,8 @@ pipeline {
             }
         }
     }
+}
+
     // post {
     //     always {
     //         sh "docker rmi $registry:$BUILD_NUMBER"
