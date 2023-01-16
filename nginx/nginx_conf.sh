@@ -11,7 +11,7 @@ server {
     server_name localhost;
 
     location / {
-        proxy_pass http://localhost:5000/;
+        proxy_pass http://flask:5000/;
         proxy_set_header Host "localhost";
     }
 }
@@ -28,10 +28,10 @@ docker exec -d -it tempnginx /bin/bash /etc/mv_file.sh
 
 
 #### Commit the changes to New Image and Push
-docker commit tempnginx pelegov/nginx_proxy
-docker push pelegov/nginx_proxy
+#docker commit tempnginx pelegov/nginx_proxy
+#docker push pelegov/nginx_proxy
 
 ### cleaning the env
-docker rmi tempnginx -f
-docker rm tempnginx -f
+#docker rmi tempnginx -f
+#docker rm tempnginx -f
 
