@@ -1,7 +1,7 @@
 version: '3'
 services:
   flask:
-    image: pelegov/flask
+    image: pelegov/flask:7
     container_name: flask
     expose:
       - "5000"
