@@ -19,13 +19,13 @@ EOF
 ### Move script
 # mv /etc/nginx/nginx.conf /etc/nginx/nginx.conf.bak
 tee << EOF > ./mv_file.sh
-mv /etc/nginx.conf /etc/nginx/conf.d/default.conf
+mv /etc/default.conf /etc/nginx/conf.d/default.conf
 exit
 EOF
 
 
 ### Copying the new conf into the container
-docker cp nginx.conf tempnginx://etc
+docker cp default.conf tempnginx://etc
 docker cp mv_file.sh tempnginx://etc
 
 ### Executing commands in the container
