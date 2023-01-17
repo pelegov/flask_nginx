@@ -11,7 +11,7 @@ server {
     server_name localhost;
 
     location / {
-        proxy_pass http://flask:5000/;
+        proxy_pass http://web-app:5000/;
         proxy_set_header Host "localhost";
     }
 }
@@ -19,11 +19,10 @@ server {
 EOF
 
 ### Move script
+# mv /etc/nginx/nginx.conf /etc/nginx/nginx.conf.bak
 tee << EOF > ./mv_file.sh
-mv /etc/nginx/nginx.conf /etc/nginx/nginx.conf.bak
-mv /etc/nginx.conf /etc/nginx/nginx.conf
+mv /etc/nginx.conf /etc/nginx/conf.d/default.conf
 exit
-
 EOF
 
 
