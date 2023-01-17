@@ -1,12 +1,12 @@
 version: '3'
 services:
   flask:
-    image: pelegov/flasks
+    image: pelegov/flask
     container_name: flask
     expose:
       - "5000"
     ports:
-      - "8000"
+      - "5000"
   nginx:
     image: pelegov/nginx_proxy
     container_name: nginx-proxy

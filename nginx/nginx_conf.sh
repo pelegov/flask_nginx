@@ -1,4 +1,5 @@
-tee >> Dockerfile <<EOF
+
+cat >> Dockerfile <<EOF
 RUN echo 'server { \n \\
     listen 80; \n \\
     location / { \n \\
@@ -7,3 +8,4 @@ RUN echo 'server { \n \\
     } \n \\
 }' > /etc/nginx/conf.d/default.conf
 EOF
+
