@@ -9,7 +9,7 @@ services:
       - "5000"
   nginx:
     image: pelegov/nginx_proxy
-    container_name: nginx-proxy
+    container_name: nginx_proxy
     ports:
       - "80:80"
     depends_on:
