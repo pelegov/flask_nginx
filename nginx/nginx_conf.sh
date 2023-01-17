@@ -10,7 +10,7 @@ server {
     listen 80; 
     location / { 
         proxy_pass http://flask:5000;
-        proxy_set_header Host "localhost";
+        proxy_set_header X-Real-IP \$remote_addr";
     }
 }
 EOF
@@ -37,6 +37,6 @@ docker commit tempnginx pelegov/nginx_proxy
 docker push pelegov/nginx_proxy
 
 ### cleaning the env
-#docker rmi tempnginx -f
-#docker rm tempnginx -f
+docker rmi tempnginx -f
+docker rm tempnginx -f
 
