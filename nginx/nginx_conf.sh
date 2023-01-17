@@ -18,6 +18,14 @@ server {
 
 EOF
 
+### Move script
+tee << EOF > ./mv_file.sh
+mv /etc/nginx/nginx.conf /etc/nginx/nginx.conf.bak
+mv /etc/nginx.conf /etc/nginx/nginx.conf
+exit
+
+EOF
+
 
 ### Copying the new conf into the container
 docker cp nginx.conf tempnginx://etc
