@@ -10,7 +10,7 @@ pipelineJob('main') {
 
 job('Nginx configuration') {
     scm {
-        github('amir-landau/jenkins-task', 'main')
+        github('pelegov/flask_nginx', 'main')
     }
     steps {
         shell(readFileFromWorkspace('nginx/nginx_conf.sh'))
